@@ -12,6 +12,7 @@ public class OrderApp {
     public static void main(String[] args) {
         MemberService memberService = new MemberServiceImpl();
         OrderService orderService = new OrderServiceImpl();
+
         Long memberId = 1L;
 
         Member member = new Member(memberId, "JSBAE", Grade.VIP);
@@ -20,5 +21,6 @@ public class OrderApp {
         Order order = orderService.createOrder(memberId, "ItemA", 10000);
 
         System.out.println("Order = " + order);
+        System.out.println("order.calculatePrice = " + order.calculatePrice());
     }
 }
