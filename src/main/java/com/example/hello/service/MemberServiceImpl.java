@@ -2,7 +2,6 @@ package com.example.hello.service;
 
 import com.example.hello.domain.Member;
 import com.example.hello.repositrory.MemberRepository;
-import com.example.hello.repositrory.MemoryMemberRepository;
 
 public class MemberServiceImpl implements MemberService {
 
