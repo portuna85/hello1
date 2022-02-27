@@ -1,6 +1,5 @@
 package com.example.hello.repositrory;
 
-import com.example.hello.domain.Grade;
 import com.example.hello.domain.Member;
 
 import java.util.HashMap;

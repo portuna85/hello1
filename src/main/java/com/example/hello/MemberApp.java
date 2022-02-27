@@ -3,7 +3,6 @@ package com.example.hello;
 import com.example.hello.domain.Grade;
 import com.example.hello.domain.Member;
 import com.example.hello.service.MemberService;
-import com.example.hello.service.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
