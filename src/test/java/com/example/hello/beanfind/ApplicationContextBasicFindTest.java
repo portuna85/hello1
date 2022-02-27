@@ -5,8 +5,6 @@ import com.example.hello.AppConfig;
 import com.example.hello.service.MemberService;
 import com.example.hello.service.MemberServiceImpl;
 
-import static org.assertj.core.api.Assertions;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
