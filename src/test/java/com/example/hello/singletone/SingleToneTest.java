@@ -37,8 +37,8 @@ public class SingleToneTest {
         SingletonService singtoneService1 = SingletonService.getInstance();
         SingletonService singtoneService2 = SingletonService.getInstance();
 
-        System.out.println("singtoneService2 = " + singtoneService2);
         System.out.println("singtoneService1 = " + singtoneService1);
+        System.out.println("singtoneService2 = " + singtoneService2);
 
         assertThat(singtoneService1).isSameAs(singtoneService2);
     }
