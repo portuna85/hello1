@@ -2,9 +2,12 @@ package com.example.hello.discount;
 
 import com.example.hello.domain.Grade;
 import com.example.hello.domain.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy {
     private int discountPercent = 10;
 
