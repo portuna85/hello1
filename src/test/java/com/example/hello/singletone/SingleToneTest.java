@@ -6,6 +6,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class SingleToneTest {
 
     @Test
@@ -22,7 +24,7 @@ public class SingleToneTest {
         System.out.println("memberService1 : " + memberService1);
         System.out.println("memberService2 : " + memberService2);
 
-        Assertions.assertThat(memberService1).isNotSameAs(memberService2);
+        assertThat(memberService1).isNotSameAs(memberService2);
     }
 
     public static void main(String[] args) {
@@ -37,5 +39,7 @@ public class SingleToneTest {
 
         System.out.println("singtoneService2 = " + singtoneService2);
         System.out.println("singtoneService1 = " + singtoneService1);
+
+        assertThat(singtoneService1).isSameAs(singtoneService2);
     }
 }
