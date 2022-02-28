@@ -6,7 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class SingleTone {
+public class SingleToneTest {
 
     @Test
     @DisplayName("스프링 없는 순수한 DI 컨테이너")
@@ -23,5 +23,16 @@ public class SingleTone {
         System.out.println("memberService2 : " + memberService2);
 
         Assertions.assertThat(memberService1).isNotSameAs(memberService2);
+    }
+
+    public static void main(String[] args) {
+        SingletonService.getInstance().logic();
+    }
+
+    @Test
+    @DisplayName("싱클톤 패턴을 적용한 객체 사용")
+    void singletoneServiceTes() {
+        SingletonService singtoneService1 = SingletonService.getInstance();
+        SingletonService singtoneService2 = SingletonService.getInstance();
     }
 }
