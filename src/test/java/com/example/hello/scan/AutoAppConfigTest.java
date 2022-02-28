@@ -1,7 +1,9 @@
 package com.example.hello.scan;
 
 import com.example.hello.AutoAppConfig;
+import com.example.hello.repositrory.MemberRepository;
 import com.example.hello.service.MemberService;
+import com.example.hello.service.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,5 +17,10 @@ public class AutoAppConfigTest {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
         MemberService bean = ac.getBean(MemberService.class);
         assertThat(bean).isInstanceOf(MemberService.class);
+
+        ac.getBean(OrderServiceImpl.class);
+        MemberRepository memberRepository = bean.getMemberRepository();
+        System.out.println("memberRepository = " + memberRepository);
+
     }
 }
