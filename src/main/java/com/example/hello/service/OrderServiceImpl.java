@@ -4,19 +4,16 @@ import com.example.hello.discount.DiscountPolicy;
 import com.example.hello.domain.Member;
 import com.example.hello.domain.Order;
 import com.example.hello.repositrory.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
-    @Autowired private final MemberRepository memberRepository;
-    @Autowired private final DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
     // private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
