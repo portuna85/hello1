@@ -5,9 +5,7 @@ import com.example.hello.domain.Grade;
 import com.example.hello.domain.Member;
 import com.example.hello.domain.Order;
 import com.example.hello.service.MemberService;
-import com.example.hello.service.MemberServiceImpl;
 import com.example.hello.service.OrderService;
-import com.example.hello.service.OrderServiceImpl;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
