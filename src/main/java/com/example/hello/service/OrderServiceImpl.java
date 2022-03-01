@@ -5,9 +5,7 @@ import com.example.hello.discount.DiscountPolicy;
 import com.example.hello.domain.Member;
 import com.example.hello.domain.Order;
 import com.example.hello.repositrory.MemberRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
