@@ -1,6 +1,7 @@
 package com.example.hello.scope;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
@@ -23,6 +24,32 @@ public class SingletonWitPrototypeTest1 {
         PrototypeBean prototypeBean2 = ac.getBean(PrototypeBean.class);
         prototypeBean2.addCount();
         assertThat(prototypeBean2.getCount()).isEqualTo(1);
+    }
+
+    @Test
+    void singletonClientUserPrototype() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(ClientBean.class, PrototypeBean.class);
+
+        ClientBean clientBean1 = ac.getBean(ClientBean.class);
+        assertThat(clientBean1.logic()).isEqualTo(1);
+
+        ClientBean clientBean2 = ac.getBean(ClientBean.class);
+        assertThat(clientBean2.logic()).isEqualTo(2);
+    }
+
+    @Scope("singleton")
+    static class ClientBean {
+        private final PrototypeBean prototypeBean;
+
+        @Autowired
+        public ClientBean(PrototypeBean prototypeBean) {
+            this.prototypeBean = prototypeBean;
+        }
+
+        public int logic() {
+            prototypeBean.addCount();
+            return prototypeBean.getCount();
+        }
     }
 
     @Scope("prototype")
